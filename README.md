@@ -22,14 +22,14 @@ Currently only PO files are supported.
 
 Require [poparser.js](poparser.js) as `poparser` which gives you the following function
 
-    poparser(fileContents[, defaultCharset])
+    poparser(fileContents[, defaultCharset]) -> Object
 
 Where
 
   * **fileContents** is a String or an ArrayBuffer representing the PO file contents
   * **defaultCharset** (defaults to *iso-8859-1*) is the charset to use if the file content is an arraybuffer and there is no charset defined in the header of the PO file.
 
-**NB!** if `fileContents` is a string, charset information is descarded.
+**NB!** if `fileContents` is a string, charset information is discarded.
 
 `poparser` returns you a JSON compatible translation table object.
 
@@ -47,7 +47,7 @@ Once you have a translation table object, you can turn it into a PO file.
 
 Require [pocompiler.js](pocompiler.js) as `pocompiler` which gives you the following function
 
-    poparser(translationTable)
+    poparser(translationTable) -> ArrayBuffer
 
 Where
 
@@ -62,7 +62,7 @@ encoded as UTF-8, no matter what the input defined.
 
 ```javascript
 var locale = {translations:{"": {"hello": {msgid:"hello", msgstr: ["tere"]}}}};
-var po = pocompiler(po);
+var po = pocompiler(locale);
 storeArrayBufferToAFile(po);
 ```
 
