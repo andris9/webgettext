@@ -4,6 +4,10 @@
 
 If you have downloaded/forked/cloned this repo, open [example/webgettext.html](example/webgettext.html) in your browser to check the features out. You can find some PO/MO files in the fixtures folder but any other PO/MO files should work as well.
 
+## Demo
+
+Example can be tested [here](http://tahvel.info/webgettext/webgettext.html).
+
 ## Usage
 
 ### Volo
