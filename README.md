@@ -2,11 +2,11 @@
 
 **webgettext** is an AMD module for parsing and generating [gettext](https://www.gnu.org/software/gettext/) files in the browser (only Firefox by now) or in a browser like environment (ie. FirefoxOS).
 
-If you have downloaded/forked/cloned this repo, open [example/webgettext.html](example/webgettext.html) in your browser to check the features out. You can find some PO/MO files in the fixtures folder but any other PO/MO files should work as well.
+If you have downloaded/forked/cloned this repo, open [example/simple.html](example/simple.html) or  [example/editor.html](example/editor.html) (uses external resources from a CDN) in your browser to check the features out. You can find some PO/MO files in the fixtures folder but any other PO/MO files should work as well.
 
 ## Demo
 
-Example can be tested [here](http://tahvel.info/webgettext/example/webgettext.html).
+Example can be tested [here](http://tahvel.info/webgettext/example/simple.html). More complex example can be found [here](http://tahvel.info/webgettext/example/editor.html).
 
 ## Usage
 
