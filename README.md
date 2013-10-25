@@ -6,7 +6,7 @@ If you have downloaded/forked/cloned this repo, open [example/webgettext.html](e
 
 ## Demo
 
-Example can be tested [here](http://tahvel.info/webgettext/webgettext.html).
+Example can be tested [here](http://tahvel.info/webgettext/example/webgettext.html).
 
 ## Usage
 
