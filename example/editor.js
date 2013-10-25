@@ -83,7 +83,6 @@ require(
         translationText.style.cursor = "pointer";
 
         sourceEdit.value = msgid;
-        translationEdit.value = data.msgstr;
 
         sourceEdit.className = "form-control";
         sourceEdit.rows = 4;
@@ -131,6 +130,7 @@ require(
 
             closeButton.style.display = "block";
 
+            translationEdit.value = [].concat(data.msgstr || [])[0] || "";
             translationEdit.focus();
 
             rowVisible = true;
@@ -141,7 +141,7 @@ require(
 
             e.preventDefault();
 
-            data.msgstr = translationEdit.value;
+            data.msgstr[0] = translationEdit.value;
             translationText.innerHTML = formatTableStr([].concat(data.msgstr || [])[0], 64);
 
             sourceText.style.display = "block";
