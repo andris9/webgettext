@@ -49,11 +49,11 @@ Once you have a translation table object, you can turn it into a PO file.
 
 Require [pocompiler.js](pocompiler.js) as `pocompiler` which gives you the following function
 
-    poparser(translationTable) -> ArrayBuffer
+    pocompiler(translationTable) -> ArrayBuffer
 
 Where
 
-  * **translationTable** is an object in the same form as the output from `poparser`
+  * **translationTable** is an object in the same form as the output from `poparser` or `moparser`
 
 `pocompiler` returns the resulting PO file as an ArrayBuffer.
 
@@ -69,8 +69,6 @@ storeArrayBufferToAFile(po);
 ```
 
 ## MO
-
-Currently you can only parse MO files but compiling is coming as well!
 
 ## Parse MO files
 
@@ -91,6 +89,31 @@ Where
 var mo = getMoAsArrayBuffer("locale.mo");
 var locale = moparser(mo);
 console.log(locale.headers);
+```
+
+## Compile MO files
+
+Once you have a translation table object, you can turn it into a MO file.
+
+Require [mocompiler.js](mocompiler.js) as `mocompiler` which gives you the following function
+
+    mocompiler(translationTable) -> ArrayBuffer
+
+Where
+
+  * **translationTable** is an object in the same form as the output from `poparser` or `moparser`
+
+`mocompiler` returns the resulting MO file as an ArrayBuffer.
+
+**NB!** TextEncoder does not support anything but unicode charsets, so the output is always
+encoded as UTF-8, no matter what the input defined.
+
+**Example**
+
+```javascript
+var locale = {translations:{"": {"hello": {msgid:"hello", msgstr: ["tere"]}}}};
+var mo = mocompiler(locale);
+storeArrayBufferToAFile(mo);
 ```
 
 ## License

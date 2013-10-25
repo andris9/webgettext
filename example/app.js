@@ -1,4 +1,4 @@
-require(["../sharedfuncs", "../poparser", "../pocompiler", "../moparser"], function(sharedfuncs, poparser, pocompiler, moparser) {
+require(["../sharedfuncs", "../poparser", "../pocompiler", "../moparser", "../mocompiler"], function(sharedfuncs, poparser, pocompiler, moparser, mocompiler) {
 
     window.parsePO = function(){
         var fileElm = document.getElementById("source");
@@ -14,6 +14,9 @@ require(["../sharedfuncs", "../poparser", "../pocompiler", "../moparser"], funct
         loadFile(fileElm, function(err, file){
             var data = moparser(file.content);
             log("Parsed from MO as JSON:\n" + JSON.stringify(data, false, 4));
+
+            var compiled = mocompiler(data);
+            log("Parsed from compiled MO:\n" + JSON.stringify(moparser(compiled), false, 4));
         });
     }
 

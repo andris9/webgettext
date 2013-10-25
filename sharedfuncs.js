@@ -147,5 +147,20 @@
         return lines;
     };
 
+    /**
+     * Copies an arraybuffer into another arraybuffer
+     *
+     * @param {ArrayBuffer} source Source buffer that will be copied into destination
+     * @param {DataView} destination Destination DataView
+     * @param {Number} destinationPos Start postition in the destination where to copy
+     */
+    sharedfuncs.bufferCopy = function(source, destination, destinationPos){
+        destinationPos = destinationPos || 0;
+        source = new Uint8Array(source);
+        for(var i=0, len = source.byteLength; i < len; i++){
+            destination.setUint8(destinationPos + i, source[i]);
+        }
+    };
+
     return sharedfuncs;
 }));
