@@ -1,8 +1,10 @@
 # webgettext
 
-**webgettext** is an AMD module for parsing and generating [gettext](https://www.gnu.org/software/gettext/) files in the browser (only Firefox by now) or in a browser like environment (ie. FirefoxOS).
+**webgettext** is an AMD module for parsing and generating [gettext](https://www.gnu.org/software/gettext/) files in the browser or in a browser like environment (ie. FirefoxOS).
 
 If you have downloaded/forked/cloned this repo, open [example/simple.html](example/simple.html) or  [example/editor.html](example/editor.html) (uses external resources from a CDN) in your browser to check the features out. You can find some PO/MO files in the fixtures folder but any other PO/MO files should work as well.
+
+**NB!** If you want to use `webgettext` in other browsers than Firefox you need to include [stringencoding](http://code.google.com/p/stringencoding/) library for textEncoder/TextDecoder support.
 
 ## Demo
 
