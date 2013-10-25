@@ -8,10 +8,11 @@
 
     </head>
     <body>
-        <h1>Gettext in a browser</h1>
+        <h1>Gettext in the browser</h1>
+
         <p>See the source in <a href="https://github.com/andris9/webgettext">GitHub</a></p>
+        
         <p>Parse and compile PO files in a Firefox browser (Firefox is needed to decode non UTF-8 charsets)</p>
-        <p>This example only knows how to handle PO files but MO support is on the way!</p>
 
         <p>
             Select a translation file:
@@ -21,6 +22,11 @@
             or
             <button onclick="parseMO()">Parse MO</button>
         </p>
+
+        <h3>Recompiled files:</h3>
+        <p>All parsed files are recompiled both as PO and MO and added here as download links:</p>
+        <div id="downloads" style="width: 200px; border: 1px solid gray; padding: 5px;"></div>
+        <h3>Log:</h3>
         <pre id="log"></pre>
     </body>
 </html>

@@ -5,7 +5,7 @@ require(["../sharedfuncs", "../poparser", "../pocompiler", "../moparser", "../mo
         loadFile(fileElm, function(err, file){
             var data = poparser(file.content);
             log("Parsed from PO as JSON:\n" + JSON.stringify(data, false, 4));
-            log("Compiled from JSON as PO:\n" + new TextDecoder("utf-8").decode(new Uint8Array(pocompiler(data))));
+            download(data);
         });
     }
 
@@ -14,13 +14,29 @@ require(["../sharedfuncs", "../poparser", "../pocompiler", "../moparser", "../mo
         loadFile(fileElm, function(err, file){
             var data = moparser(file.content);
             log("Parsed from MO as JSON:\n" + JSON.stringify(data, false, 4));
-
-            var compiled = mocompiler(data);
-            log("Parsed from compiled MO:\n" + JSON.stringify(moparser(compiled), false, 4));
+            download(data);
         });
     }
 
+    function download(data){
+        addDownload(pocompiler(data), "compiled.po");
+        addDownload(mocompiler(data), "compiled.mo");
+    }
+
 });
+
+function addDownload(buf, filename){
+    var blob = new Blob([buf], {type:'application/octet-stream'}),
+        url = URL.createObjectURL(blob),
+        link = document.createElement("a");
+
+    link.innerHTML = filename;
+    link.href = url;
+    link.style="display: block; margin: 5px 0;";
+    link.download = filename;
+
+    document.getElementById("downloads").appendChild(link);
+}
 
 function log(str){
     var elm = document.getElementById("log");
