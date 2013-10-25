@@ -79,6 +79,9 @@ require(
 
             closeButton = document.createElement("button");
 
+        sourceText.style.cursor = "pointer";
+        translationText.style.cursor = "pointer";
+
         sourceEdit.value = msgid;
         translationEdit.value = data.msgstr;
 
