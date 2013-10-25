@@ -6,7 +6,11 @@ If you have downloaded/forked/cloned this repo, open [example/simple.html](examp
 
 ## Demo
 
-Example can be tested [here](http://tahvel.info/webgettext/example/simple.html). More complex example can be found [here](http://tahvel.info/webgettext/example/editor.html).
+### Gettext Editor
+
+editor.html from the example folder can be tested [here](http://tahvel.info/webgettext/example/editor.html). This is a working editor - you can load .mo or .po files from your computer, edit translation strings (plural forms not supported though) and "download" updated translation file as .mo or .po.
+
+More simple example can be tested [here](http://tahvel.info/webgettext/example/simple.html).
 
 ## Usage
 
