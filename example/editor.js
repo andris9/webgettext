@@ -2,14 +2,15 @@ require(
   ["../poparser", "../pocompiler", "../moparser", "../mocompiler"], 
   function(poparser, pocompiler, moparser, mocompiler) {
 
-    var curData = {};
+    var curData = {},
+        curFilename = false;
 
     document.getElementById("generatePo").addEventListener("click", function(e){
-        download(pocompiler(curData), "locale.po");
+        download(pocompiler(curData), (curFilename || "locale") + ".po");
     });
 
     document.getElementById("generateMo").addEventListener("click", function(e){
-        download(mocompiler(curData), "locale.mo");
+        download(mocompiler(curData), (curFilename || "locale") + ".mo");
     });
 
     function download(buf, filename){
@@ -49,6 +50,10 @@ require(
             }
 
             curData = data;
+            curFilename = file.name || "";
+            curFilename = curFilename.split(".");
+            curFilename.pop();
+            curFilename = curFilename.join(".") || "";
 
             $("#edit-tab").tab("show");
 
