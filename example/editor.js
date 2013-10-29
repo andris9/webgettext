@@ -1,16 +1,15 @@
-require(
-  ["../poparser", "../pocompiler", "../moparser", "../mocompiler"], 
-  function(poparser, pocompiler, moparser, mocompiler) {
+
+require(["../webgettext"], function(webgettext){
 
     var curData = {},
         curFilename = false;
 
     document.getElementById("generatePo").addEventListener("click", function(e){
-        download(pocompiler(curData), (curFilename || "locale") + ".po");
+        download(webgettext.pocompiler(curData), (curFilename || "locale") + ".po");
     });
 
     document.getElementById("generateMo").addEventListener("click", function(e){
-        download(mocompiler(curData), (curFilename || "locale") + ".mo");
+        download(webgettext.mocompiler(curData), (curFilename || "locale") + ".mo");
     });
 
     function download(buf, filename){
@@ -36,11 +35,11 @@ require(
         loadFile(document.getElementById("sourceFile"), function(err, file){
             var data;
             try{
-                data = moparser(file.content);
+                data = webgettext.moparser(file.content);
             }catch(E){}
             if(!data){
                 try{
-                    data = poparser(file.content);
+                    data = webgettext.poparser(file.content);
                 }catch(E){}
             };
             
@@ -54,6 +53,18 @@ require(
             curFilename = curFilename.split(".");
             curFilename.pop();
             curFilename = curFilename.join(".") || "";
+
+            var pluralForms;
+            if(data.headers.language){
+                pluralForms = webgettext.getPluralForms(data.headers.language);
+                data.headers.language = webgettext.generatelanguageCode(data.headers.language);
+            }
+            if(!pluralForms && data.headers["plural-forms"]){
+                pluralForms = webgettext.findPluralForms(data.headers["plural-forms"])
+            }
+            if(pluralForms){
+                data.headers["plural-forms"] = pluralForms.plurals;
+            }
 
             $("#edit-tab").tab("show");
 
