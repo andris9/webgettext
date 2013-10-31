@@ -12,7 +12,7 @@ require(["../webgettext"], function(webgettext){
         webgettext.forceDownload(webgettext.mocompiler(curData), (curFilename || "locale") + ".mo");
     });
 
-    document.getElementById("sourceForm").addEventListener("submit", function(e){
+    document.getElementById("sourceForm").addEventListener("click", function(e){
         e.preventDefault();
 
         webgettext.open(function(err, data, file){
@@ -39,15 +39,23 @@ require(["../webgettext"], function(webgettext){
                 data.headers["plural-forms"] = pluralForms.plural_forms;
             }
 
-            $("#edit-tab").tab("show");
+            document.getElementById("editor").style.display = "block";
 
-            var body = document.querySelector("#strings tbody");
-            body.innerHTML = "";
+            var rows = document.querySelectorAll("#strings tbody > tr"),
+                tbody = document.querySelector("#strings tbody");
+
+            Array.prototype.slice.call(rows).forEach(function(row){
+                if(row && row.remove){
+                    row.remove();
+                }
+            });
+
+            rows = null;
 
             Object.keys(data.translations).forEach(function(context){
                 Object.keys(data.translations[context]).forEach(function(msgid){
                     if(context || msgid){
-                        addRow(body, context, msgid, data.translations[context][msgid]);    
+                        addRow(tbody, context, msgid, data.translations[context][msgid]);    
                     }
                 });
             });
@@ -55,97 +63,34 @@ require(["../webgettext"], function(webgettext){
         });
     }, false);
 
-    function addRow(body, context, msgid, data){
-        var row = document.createElement("tr"),
-            source = document.createElement("td"),
-            translation = document.createElement("td"),
+    function addRow(tbody, context, msgid, data){
+        var row = tbody.querySelector('#translation-row').content.cloneNode(true),
+            msgid = row.querySelector("textarea.msgid"),
+            msgctx = row.querySelector(".msgctx"),
+            msgstr = row.querySelector("textarea.msgstr");
 
-            sourceText = document.createElement("div"),
-            translationText = document.createElement("div"),
+        msgid.value = data.msgid;
+        if(context){
+            msgctx.innerHTML = formatTableStr(context);
+            msgctx.className = "msgctx label label-info pull-right";
+        }
 
-            sourceEdit = document.createElement("textarea"),
-            translationEdit = document.createElement("textarea"),
+        var translation = [].concat(data.msgstr || []);
+        row.plural = 0;
+        msgstr.value = translation[0];
 
-            closeButton = document.createElement("button");
-
-        sourceText.style.cursor = "pointer";
-        translationText.style.cursor = "pointer";
-
-        sourceEdit.value = msgid;
-
-        sourceEdit.className = "form-control";
-        sourceEdit.rows = 4;
-
-        translationEdit.className = "form-control";
-        translationEdit.rows = 4;
-
-        closeButton.className = "btn btn-default";
-        closeButton.innerHTML = "Close and save";
-
-        sourceEdit.style.display = "none";
-        translationEdit.style.display = "none";
-        closeButton.style.display = "none";
-
-        sourceEdit.disabled = true;
-
-        row.appendChild(source);
-        row.appendChild(translation);
-
-        sourceText.innerHTML = formatTableStr(data.msgid, 64) + (context ? " [ " + context + " ]" : "");
-        translationText.innerHTML = formatTableStr([].concat(data.msgstr || [])[0], 64);
-
-        source.appendChild(sourceText);
-        source.appendChild(sourceEdit);
-
-        translation.appendChild(translationText);
-        translation.appendChild(translationEdit);
-        translation.appendChild(closeButton);
-
-        var rowVisible = false;
-
-        row.addEventListener("click", function(e){
-
-            e.preventDefault();
-
-            if(rowVisible || e.target.tagName == "BUTTON"){
-                return;
-            }
-
-            sourceText.style.display = "none";
-            sourceEdit.style.display = "block";
-            
-            translationText.style.display = "none";
-            translationEdit.style.display = "block";
-
-            closeButton.style.display = "block";
-
-            translationEdit.value = [].concat(data.msgstr || [])[0] || "";
-            translationEdit.focus();
-
-            rowVisible = true;
-
+        msgstr.addEventListener("focus", function(){
+            msgstr.setAttribute("rows", "4");
+            msgid.setAttribute("rows", "4");
         }, false);
 
-        closeButton.addEventListener("click", function(e){
-
-            e.preventDefault();
-
-            data.msgstr[0] = translationEdit.value;
-            translationText.innerHTML = formatTableStr([].concat(data.msgstr || [])[0], 64);
-
-            sourceText.style.display = "block";
-            sourceEdit.style.display = "none";
-            
-            translationText.style.display = "block";
-            translationEdit.style.display = "none";
-
-            closeButton.style.display = "none";
-
-            rowVisible = false;
-
+        msgstr.addEventListener("blur", function(){
+            data.msgstr[row.plural || 0] = msgstr.value;
+            msgstr.setAttribute("rows", "1");
+            msgid.setAttribute("rows", "1");
         }, false);
 
-        body.appendChild(row);
+        tbody.appendChild(row);
     }
 
     function formatTableStr(str, len){
