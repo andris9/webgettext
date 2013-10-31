@@ -5,46 +5,19 @@ require(["../webgettext"], function(webgettext){
         curFilename = false;
 
     document.getElementById("generatePo").addEventListener("click", function(e){
-        download(webgettext.pocompiler(curData), (curFilename || "locale") + ".po");
+        webgettext.forceDownload(webgettext.pocompiler(curData), (curFilename || "locale") + ".po");
     });
 
     document.getElementById("generateMo").addEventListener("click", function(e){
-        download(webgettext.mocompiler(curData), (curFilename || "locale") + ".mo");
+        webgettext.forceDownload(webgettext.mocompiler(curData), (curFilename || "locale") + ".mo");
     });
-
-    function download(buf, filename){
-        var blob = new Blob([buf], {type:'application/octet-stream'}),
-            url = URL.createObjectURL(blob),
-            link = document.createElement("a");
-
-        link.innerHTML = filename;
-        link.href = url;
-        link.download = filename;
-
-        var e = document.createEvent("MouseEvents");
-        e.initMouseEvent("click", true, true, window,
-            0, 0, 0, 0, 0,
-            false, false, false, false,
-            0, null);
-        link.dispatchEvent(e);
-    }
 
     document.getElementById("sourceForm").addEventListener("submit", function(e){
         e.preventDefault();
 
-        loadFile(document.getElementById("sourceFile"), function(err, file){
-            var data;
-            try{
-                data = webgettext.moparser(file.content);
-            }catch(E){}
-            if(!data){
-                try{
-                    data = webgettext.poparser(file.content);
-                }catch(E){}
-            };
-            
-            if(!data){
-                alert("Could not parse input file");
+        webgettext.open(function(err, data, file){
+            if(err){
+                alert(err.message);
                 return;
             }
 
@@ -188,29 +161,5 @@ require(["../webgettext"], function(webgettext){
                 replace(/&[^;]*$/, "") + " ...";
         }
         return str;
-    }
-
-    function loadFile(fileElm, callback){
-        var reader = new FileReader(),
-            file = fileElm.files[0];
-
-        // run once the file has been loaded
-        reader.onload = function(evt){
-
-            var fileData = {
-                content: evt.target.result,
-                name: file.name,
-                type: file.type
-            };
-
-            callback(null, fileData);
-        };
-
-        reader.onerror = function(evt){
-            callback(new Error("File read error " + evt.target.error.code));
-        };
-
-        // start loading file
-        reader.readAsArrayBuffer(file);
     }
 });

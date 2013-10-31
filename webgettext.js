@@ -31,14 +31,14 @@
             "./plural_forms"
             ], factory);
     } else {
-        root.poparser = factory(poparser, moparser, pocompiler, mocompiler, plural_forms);
+        root.webgettext = factory(poparser, moparser, pocompiler, mocompiler, plural_forms);
     }
 
 }(this, function(poparser, moparser, pocompiler, mocompiler, plural_forms) {
 
     "use strict";
 
-    var webGettext = {
+    var webgettext = {
 
         poparser: poparser,
         moparser: moparser,
@@ -116,9 +116,90 @@
             }
 
             return response;
+        },
+
+        loadFile: function(callback){
+            var fileInput = document.createElement("input");
+            fileInput.setAttribute("type", "file");
+            fileInput.addEventListener("change", function(e){
+                e.preventDefault();
+
+                if(!fileInput || !fileInput.files || !fileInput.files[0]){
+                    fileInput = null;
+                    return callback(null, false);
+                }
+
+                var reader = new FileReader();
+
+                // run once the file has been loaded
+                reader.onload = function(evt){
+                    var fileName = fileInput.files[0].name,
+                        fileType = fileInput.files[0].type;
+
+                    reader = null;
+                    fileInput = null;
+
+                    callback(null, {
+                        content: evt.target.result,
+                        name: fileName,
+                        type: fileType
+                    });
+                };
+
+                reader.onerror = function(evt){
+                    callback(new Error("File read error " + evt.target.error.code));
+                };
+
+                // start loading file
+                reader.readAsArrayBuffer(fileInput.files[0]);
+            }, false);
+            fileInput.click();
+        },
+
+        forceDownload: function(arraybuffer, filename){
+            var blob = new Blob([arraybuffer], {type:'application/octet-stream'}),
+                url = URL.createObjectURL(blob),
+                link = document.createElement("a");
+
+            link.innerHTML = filename;
+            link.href = url;
+            link.download = filename;
+
+            var e = document.createEvent("MouseEvents");
+            e.initMouseEvent("click", true, true, window,
+                0, 0, 0, 0, 0,
+                false, false, false, false,
+                0, null);
+            link.dispatchEvent(e);
+        },
+
+        open: function(callback){
+            this.loadFile((function(err, file){
+                var data;
+                
+                if(err || !file){
+                    return callback(new Error("Failed opening input file"));
+                }
+
+                try{
+                    data = this.moparser(file.content);
+                }catch(E){}
+
+                if(!data){
+                    try{
+                        data = this.poparser(file.content);
+                    }catch(E){}
+                };
+                
+                if(!data){
+                    return callback(new Error("Could not parse input file"));
+                }
+
+                return callback(null, data, file);
+            }).bind(this));
         }
     };
 
-    return webGettext;
+    return webgettext;
 
 }));

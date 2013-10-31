@@ -27,7 +27,7 @@
             "./webgettext_shared"
             ], factory);
     } else {
-        root.poparser = factory(webgettext_shared);
+        root.pocompiler = factory(webgettext_shared);
     }
 
 }(this, function(webgettext_shared) {

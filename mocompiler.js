@@ -27,7 +27,7 @@
             "./webgettext_shared"
             ], factory);
     } else {
-        root.moparser = factory(webgettext_shared);
+        root.mocompiler = factory(webgettext_shared);
     }
 
 }(this, function(webgettext_shared) {
