@@ -25,14 +25,14 @@
     if (typeof define === 'function' && define.amd) {
         define(factory);
     } else {
-        root.sharedfuncs = factory();
+        root.webgettext_shared = factory();
     }
 
 }(this, function() {
 
     "use strict";
 
-    var sharedfuncs = {};
+    var webgettext_shared = {};
 
     /**
      * Parses a header string into an object of key-value pairs
@@ -40,7 +40,7 @@
      * @param {String} str Header string
      * @return {Object} An object of key-value pairs
      */
-    sharedfuncs.parseHeader = function(str){
+    webgettext_shared.parseHeader = function(str){
         var lines = (str || "").split("\n"),
             headers = {};
 
@@ -63,7 +63,7 @@
      * @param {String} str String to be updated
      * @return {String} A string with uppercase words
      */
-    sharedfuncs.upperCaseWords = function(str){
+    webgettext_shared.upperCaseWords = function(str){
         return (str || "").toLowerCase().trim().replace(/^(MIME|POT?(?=\-)|[a-z])|\-[a-z]/gi, function(str){
             return str.toUpperCase();
         });
@@ -75,12 +75,12 @@
      * @param {Object} header Object of key value pairs
      * @return {String} Header string
      */
-    sharedfuncs.generateHeader = function(header){
+    webgettext_shared.generateHeader = function(header){
         var lines = [];
 
         Object.keys(header || {}).forEach(function(key){
             if(key){
-                lines.push(sharedfuncs.upperCaseWords(key) + ": " + (header[key] || "").trim());
+                lines.push(webgettext_shared.upperCaseWords(key) + ": " + (header[key] || "").trim());
             }
         });
 
@@ -93,7 +93,7 @@
      * @param {String} charset Charset name
      * @return {String} Normalized charset name
      */
-    sharedfuncs.formatCharset = function(charset, defaultCharset){
+    webgettext_shared.formatCharset = function(charset, defaultCharset){
         return (charset || "iso-8859-1").toString().toLowerCase().
                 replace(/^utf[\-_]?(\d+)$/, "utf-$1").
                 replace(/^win(?:dows)?[\-_]?(\d+)$/, "windows-$1").
@@ -110,7 +110,7 @@
      * @param {Number} [maxLen=76] Maximum allowed length for folded lines
      * @return {Array} An array of lines
      */
-    sharedfuncs.foldLine = function(str, maxLen){
+    webgettext_shared.foldLine = function(str, maxLen){
 
         maxLen = maxLen || 76;
 
@@ -154,7 +154,7 @@
      * @param {DataView} destination Destination DataView
      * @param {Number} destinationPos Start postition in the destination where to copy
      */
-    sharedfuncs.bufferCopy = function(source, destination, destinationPos){
+    webgettext_shared.bufferCopy = function(source, destination, destinationPos){
         destinationPos = destinationPos || 0;
         source = new Uint8Array(source);
         for(var i=0, len = source.byteLength; i < len; i++){
@@ -162,5 +162,5 @@
         }
     };
 
-    return sharedfuncs;
+    return webgettext_shared;
 }));

@@ -22,7 +22,7 @@
     if (typeof define == 'function' && define.amd) {
         define(factory);
     } else {
-        root.plurals = factory();
+        root.plural_forms = factory();
     }
 }(this, function() {
 
@@ -41,7 +41,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "af": {
             "name": "Afrikaans",
@@ -55,7 +55,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ak": {
             "name": "Akan",
@@ -69,7 +69,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "am": {
             "name": "Amharic",
@@ -83,7 +83,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "an": {
             "name": "Aragonese",
@@ -97,7 +97,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ar": {
             "name": "Arabic",
@@ -127,7 +127,7 @@
                     "sample": 100
                 }
             ],
-            "plurals": "nplurals = 6; plural = (n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n % 100 >= 3 && n % 100 <= 10 ? 3 : n % 100 >= 11 ? 4 : 5)"
+            "plural_forms": "nplural_forms = 6; plural = (n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n % 100 >= 3 && n % 100 <= 10 ? 3 : n % 100 >= 11 ? 4 : 5)"
         },
         "arn": {
             "name": "Mapudungun",
@@ -141,7 +141,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "ast": {
             "name": "Asturian",
@@ -155,7 +155,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ay": {
             "name": "Aymará",
@@ -165,7 +165,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "az": {
             "name": "Azerbaijani",
@@ -179,7 +179,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "be": {
             "name": "Belarusian",
@@ -197,7 +197,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
         },
         "bg": {
             "name": "Bulgarian",
@@ -211,7 +211,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "bn": {
             "name": "Bengali",
@@ -225,7 +225,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "bo": {
             "name": "Tibetan",
@@ -235,7 +235,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "br": {
             "name": "Breton",
@@ -249,7 +249,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "brx": {
             "name": "Bodo",
@@ -263,7 +263,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "bs": {
             "name": "Bosnian",
@@ -281,7 +281,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
         },
         "ca": {
             "name": "Catalan",
@@ -295,7 +295,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "cgg": {
             "name": "Chiga",
@@ -305,7 +305,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "cs": {
             "name": "Czech",
@@ -323,7 +323,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n == 1 ? 0 : (n >= 2 && n <= 4) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n == 1 ? 0 : (n >= 2 && n <= 4) ? 1 : 2)"
         },
         "csb": {
             "name": "Kashubian",
@@ -341,7 +341,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n == 1 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n == 1 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
         },
         "cy": {
             "name": "Welsh",
@@ -363,7 +363,7 @@
                     "sample": 8
                 }
             ],
-            "plurals": "nplurals = 4; plural = (n == 1 ? 0 : n == 2 ? 1 : (n != 8 && n != 11) ? 2 : 3)"
+            "plural_forms": "nplural_forms = 4; plural = (n == 1 ? 0 : n == 2 ? 1 : (n != 8 && n != 11) ? 2 : 3)"
         },
         "da": {
             "name": "Danish",
@@ -377,7 +377,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "de": {
             "name": "German",
@@ -391,7 +391,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "doi": {
             "name": "Dogri",
@@ -405,7 +405,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "dz": {
             "name": "Dzongkha",
@@ -415,7 +415,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "el": {
             "name": "Greek",
@@ -429,7 +429,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "en": {
             "name": "English",
@@ -443,7 +443,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "eo": {
             "name": "Esperanto",
@@ -457,7 +457,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "es": {
             "name": "Spanish",
@@ -471,7 +471,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "et": {
             "name": "Estonian",
@@ -485,7 +485,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "eu": {
             "name": "Basque",
@@ -499,7 +499,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "fa": {
             "name": "Persian",
@@ -509,7 +509,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "ff": {
             "name": "Fulah",
@@ -523,7 +523,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "fi": {
             "name": "Finnish",
@@ -537,7 +537,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "fil": {
             "name": "Filipino",
@@ -551,7 +551,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "fo": {
             "name": "Faroese",
@@ -565,7 +565,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "fr": {
             "name": "French",
@@ -579,7 +579,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "fur": {
             "name": "Friulian",
@@ -593,7 +593,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "fy": {
             "name": "Frisian",
@@ -607,7 +607,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ga": {
             "name": "Irish",
@@ -633,7 +633,7 @@
                     "sample": 11
                 }
             ],
-            "plurals": "nplurals = 5; plural = (n == 1 ? 0 : n == 2 ? 1 : n < 7 ? 2 : n < 11 ? 3 : 4)"
+            "plural_forms": "nplural_forms = 5; plural = (n == 1 ? 0 : n == 2 ? 1 : n < 7 ? 2 : n < 11 ? 3 : 4)"
         },
         "gd": {
             "name": "Scottish Gaelic",
@@ -655,7 +655,7 @@
                     "sample": 20
                 }
             ],
-            "plurals": "nplurals = 4; plural = ((n == 1 || n == 11) ? 0 : (n == 2 || n == 12) ? 1 : (n > 2 && n < 20) ? 2 : 3)"
+            "plural_forms": "nplural_forms = 4; plural = ((n == 1 || n == 11) ? 0 : (n == 2 || n == 12) ? 1 : (n > 2 && n < 20) ? 2 : 3)"
         },
         "gl": {
             "name": "Galician",
@@ -669,7 +669,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "gu": {
             "name": "Gujarati",
@@ -683,7 +683,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "gun": {
             "name": "Gun",
@@ -697,7 +697,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "ha": {
             "name": "Hausa",
@@ -711,7 +711,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "he": {
             "name": "Hebrew",
@@ -725,7 +725,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "hi": {
             "name": "Hindi",
@@ -739,7 +739,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "hne": {
             "name": "Chhattisgarhi",
@@ -753,7 +753,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "hr": {
             "name": "Croatian",
@@ -771,7 +771,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
         },
         "hu": {
             "name": "Hungarian",
@@ -785,7 +785,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "hy": {
             "name": "Armenian",
@@ -799,7 +799,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "id": {
             "name": "Indonesian",
@@ -809,7 +809,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "is": {
             "name": "Icelandic",
@@ -823,7 +823,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n % 10 != 1 || n % 100 == 11)"
+            "plural_forms": "nplural_forms = 2; plural = (n % 10 != 1 || n % 100 == 11)"
         },
         "it": {
             "name": "Italian",
@@ -837,7 +837,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ja": {
             "name": "Japanese",
@@ -847,7 +847,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "jbo": {
             "name": "Lojban",
@@ -857,7 +857,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "jv": {
             "name": "Javanese",
@@ -871,7 +871,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 0)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 0)"
         },
         "ka": {
             "name": "Georgian",
@@ -881,7 +881,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "kk": {
             "name": "Kazakh",
@@ -891,7 +891,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "km": {
             "name": "Khmer",
@@ -901,7 +901,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "kn": {
             "name": "Kannada",
@@ -915,7 +915,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ko": {
             "name": "Korean",
@@ -925,7 +925,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "ku": {
             "name": "Kurdish",
@@ -939,7 +939,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "kw": {
             "name": "Cornish",
@@ -961,7 +961,7 @@
                     "sample": 4
                 }
             ],
-            "plurals": "nplurals = 4; plural = (n == 1 ? 0 : n == 2 ? 1 : n == 3 ? 2 : 3)"
+            "plural_forms": "nplural_forms = 4; plural = (n == 1 ? 0 : n == 2 ? 1 : n == 3 ? 2 : 3)"
         },
         "ky": {
             "name": "Kyrgyz",
@@ -971,7 +971,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "lb": {
             "name": "Letzeburgesch",
@@ -985,7 +985,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ln": {
             "name": "Lingala",
@@ -999,7 +999,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "lo": {
             "name": "Lao",
@@ -1009,7 +1009,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "lt": {
             "name": "Lithuanian",
@@ -1027,7 +1027,7 @@
                     "sample": 10
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
         },
         "lv": {
             "name": "Latvian",
@@ -1045,7 +1045,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n != 0 ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n != 0 ? 1 : 2)"
         },
         "mai": {
             "name": "Maithili",
@@ -1059,7 +1059,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "mfe": {
             "name": "Mauritian Creole",
@@ -1073,7 +1073,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "mg": {
             "name": "Malagasy",
@@ -1087,7 +1087,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "mi": {
             "name": "Maori",
@@ -1101,7 +1101,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "mk": {
             "name": "Macedonian",
@@ -1115,7 +1115,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n == 1 || n % 10 == 1 ? 0 : 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n == 1 || n % 10 == 1 ? 0 : 1)"
         },
         "ml": {
             "name": "Malayalam",
@@ -1129,7 +1129,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "mn": {
             "name": "Mongolian",
@@ -1143,7 +1143,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "mni": {
             "name": "Manipuri",
@@ -1157,7 +1157,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "mnk": {
             "name": "Mandinka",
@@ -1175,7 +1175,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n == 0 ? 0 : n == 1 ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n == 0 ? 0 : n == 1 ? 1 : 2)"
         },
         "mr": {
             "name": "Marathi",
@@ -1189,7 +1189,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ms": {
             "name": "Malay",
@@ -1199,7 +1199,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "mt": {
             "name": "Maltese",
@@ -1221,7 +1221,7 @@
                     "sample": 20
                 }
             ],
-            "plurals": "nplurals = 4; plural = (n == 1 ? 0 : n == 0 || ( n % 100 > 1 && n % 100 < 11) ? 1 : (n % 100 > 10 && n % 100 < 20 ) ? 2 : 3)"
+            "plural_forms": "nplural_forms = 4; plural = (n == 1 ? 0 : n == 0 || ( n % 100 > 1 && n % 100 < 11) ? 1 : (n % 100 > 10 && n % 100 < 20 ) ? 2 : 3)"
         },
         "my": {
             "name": "Burmese",
@@ -1231,7 +1231,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "nah": {
             "name": "Nahuatl",
@@ -1245,7 +1245,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "nap": {
             "name": "Neapolitan",
@@ -1259,7 +1259,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "nb": {
             "name": "Norwegian Bokmal",
@@ -1273,7 +1273,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ne": {
             "name": "Nepali",
@@ -1287,7 +1287,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "nl": {
             "name": "Dutch",
@@ -1301,7 +1301,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "nn": {
             "name": "Norwegian Nynorsk",
@@ -1315,7 +1315,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "no": {
             "name": "Norwegian",
@@ -1329,7 +1329,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "nso": {
             "name": "Northern Sotho",
@@ -1343,7 +1343,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "oc": {
             "name": "Occitan",
@@ -1357,7 +1357,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "or": {
             "name": "Oriya",
@@ -1371,7 +1371,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "pa": {
             "name": "Punjabi",
@@ -1385,7 +1385,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "pap": {
             "name": "Papiamento",
@@ -1399,7 +1399,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "pl": {
             "name": "Polish",
@@ -1417,7 +1417,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n == 1 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n == 1 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
         },
         "pms": {
             "name": "Piemontese",
@@ -1431,7 +1431,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ps": {
             "name": "Pashto",
@@ -1445,7 +1445,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "pt": {
             "name": "Portuguese",
@@ -1459,7 +1459,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "rm": {
             "name": "Romansh",
@@ -1473,7 +1473,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ro": {
             "name": "Romanian",
@@ -1491,7 +1491,7 @@
                     "sample": 20
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n == 1 ? 0 : (n == 0 || (n % 100 > 0 && n % 100 < 20)) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n == 1 ? 0 : (n == 0 || (n % 100 > 0 && n % 100 < 20)) ? 1 : 2)"
         },
         "ru": {
             "name": "Russian",
@@ -1509,7 +1509,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
         },
         "rw": {
             "name": "Kinyarwanda",
@@ -1523,7 +1523,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "sah": {
             "name": "Yakut",
@@ -1533,7 +1533,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "sat": {
             "name": "Santali",
@@ -1547,7 +1547,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "sco": {
             "name": "Scots",
@@ -1561,7 +1561,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "sd": {
             "name": "Sindhi",
@@ -1575,7 +1575,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "se": {
             "name": "Northern Sami",
@@ -1589,7 +1589,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "si": {
             "name": "Sinhala",
@@ -1603,7 +1603,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "sk": {
             "name": "Slovak",
@@ -1621,7 +1621,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n == 1 ? 0 : (n >= 2 && n <= 4) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n == 1 ? 0 : (n >= 2 && n <= 4) ? 1 : 2)"
         },
         "sl": {
             "name": "Slovenian",
@@ -1643,7 +1643,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 4; plural = (n % 100 == 1 ? 1 : n % 100 == 2 ? 2 : n % 100 == 3 || n % 100 == 4 ? 3 : 0)"
+            "plural_forms": "nplural_forms = 4; plural = (n % 100 == 1 ? 1 : n % 100 == 2 ? 2 : n % 100 == 3 || n % 100 == 4 ? 3 : 0)"
         },
         "so": {
             "name": "Somali",
@@ -1657,7 +1657,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "son": {
             "name": "Songhay",
@@ -1671,7 +1671,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "sq": {
             "name": "Albanian",
@@ -1685,7 +1685,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "sr": {
             "name": "Serbian",
@@ -1703,7 +1703,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
         },
         "su": {
             "name": "Sundanese",
@@ -1713,7 +1713,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "sv": {
             "name": "Swedish",
@@ -1727,7 +1727,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "sw": {
             "name": "Swahili",
@@ -1741,7 +1741,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "ta": {
             "name": "Tamil",
@@ -1755,7 +1755,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "te": {
             "name": "Telugu",
@@ -1769,7 +1769,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "tg": {
             "name": "Tajik",
@@ -1783,7 +1783,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "th": {
             "name": "Thai",
@@ -1793,7 +1793,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "ti": {
             "name": "Tigrinya",
@@ -1807,7 +1807,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "tk": {
             "name": "Turkmen",
@@ -1821,7 +1821,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "tr": {
             "name": "Turkish",
@@ -1835,7 +1835,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "tt": {
             "name": "Tatar",
@@ -1845,7 +1845,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "ug": {
             "name": "Uyghur",
@@ -1855,7 +1855,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "uk": {
             "name": "Ukrainian",
@@ -1873,7 +1873,7 @@
                     "sample": 5
                 }
             ],
-            "plurals": "nplurals = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
+            "plural_forms": "nplural_forms = 3; plural = (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2)"
         },
         "ur": {
             "name": "Urdu",
@@ -1887,7 +1887,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "uz": {
             "name": "Uzbek",
@@ -1901,7 +1901,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "vi": {
             "name": "Vietnamese",
@@ -1911,7 +1911,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "wa": {
             "name": "Walloon",
@@ -1925,7 +1925,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n > 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n > 1)"
         },
         "wo": {
             "name": "Wolof",
@@ -1935,7 +1935,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         },
         "yo": {
             "name": "Yoruba",
@@ -1949,7 +1949,7 @@
                     "sample": 2
                 }
             ],
-            "plurals": "nplurals = 2; plural = (n != 1)"
+            "plural_forms": "nplural_forms = 2; plural = (n != 1)"
         },
         "zh": {
             "name": "Chinese",
@@ -1959,7 +1959,7 @@
                     "sample": 1
                 }
             ],
-            "plurals": "nplurals = 1; plural = 0"
+            "plural_forms": "nplural_forms = 1; plural = 0"
         }
     };
 

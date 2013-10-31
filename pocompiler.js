@@ -17,20 +17,20 @@
 
 // AMD shim
 /* jshint browser: true, nonstandard: true, strict: true */
-/* global define: false, sharedfuncs: false, TextEncoder: false */
+/* global define: false, webgettext_shared: false, TextEncoder: false */
 (function(root, factory) {
 
     "use strict";
 
     if (typeof define === 'function' && define.amd) {
         define([
-            "./sharedfuncs"
+            "./webgettext_shared"
             ], factory);
     } else {
-        root.poparser = factory(sharedfuncs);
+        root.poparser = factory(webgettext_shared);
     }
 
-}(this, function(sharedfuncs) {
+}(this, function(webgettext_shared) {
 
     "use strict";
 
@@ -162,7 +162,7 @@
                 replace(/\r/g, "\\r").
                 replace(/\n/g, "\\n");
 
-        var lines = sharedfuncs.foldLine(value);
+        var lines = webgettext_shared.foldLine(value);
 
         if(lines.length < 2){
             return key + " \"" + (lines.shift() || "") + "\"";
@@ -188,7 +188,7 @@
     Compiler.prototype._handleCharset = function(){
         var parts = (this._table.headers['content-type'] || "text/plain").split(";"),
             contentType = parts.shift(),
-            charset = sharedfuncs.formatCharset(this._charset),
+            charset = webgettext_shared.formatCharset(this._charset),
             params = [];
 
         params = parts.map(function(part){
@@ -198,7 +198,7 @@
 
             if(key.toLowerCase() == "charset"){
                 if(!charset){
-                    charset = sharedfuncs.formatCharset(value.trim() || "utf-8");
+                    charset = webgettext_shared.formatCharset(value.trim() || "utf-8");
                 }
                 return "charset=" + charset;
             }
@@ -225,7 +225,7 @@
         var response = [],
             headerBlock = this._table.translations[""] && this._table.translations[""][""] || {};
 
-        response.push(this._drawBlock(headerBlock, {msgstr: sharedfuncs.generateHeader(this._table.headers)}));
+        response.push(this._drawBlock(headerBlock, {msgstr: webgettext_shared.generateHeader(this._table.headers)}));
 
         Object.keys(this._table.translations).forEach((function(msgctxt){
             if(typeof this._table.translations[msgctxt] != "object"){

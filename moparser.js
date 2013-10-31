@@ -17,20 +17,20 @@
 
 // AMD shim
 /* jshint browser: true, nonstandard: true, strict: true */
-/* global define: false, sharedfuncs: false, TextDecoder: false */
+/* global define: false, webgettext_shared: false, TextDecoder: false */
 (function(root, factory) {
 
     "use strict";
 
     if (typeof define === 'function' && define.amd) {
         define([
-            "./sharedfuncs"
+            "./webgettext_shared"
             ], factory);
     } else {
-        root.moparser = factory(sharedfuncs);
+        root.moparser = factory(webgettext_shared);
     }
 
-}(this, function(sharedfuncs) {
+}(this, function(webgettext_shared) {
 
     "use strict";
 
@@ -131,12 +131,12 @@
             match;
             
         if((match = headersStr.match(/[; ]charset\s*=\s*([\w\-]+)/i))){
-            this._charset = this._table.charset = sharedfuncs.formatCharset(match[1], this._charset);
+            this._charset = this._table.charset = webgettext_shared.formatCharset(match[1], this._charset);
         }
         
         headers = new TextDecoder(this._charset).decode(new Uint8Array(headers));
 
-        this._table.headers = sharedfuncs.parseHeader(headers);
+        this._table.headers = webgettext_shared.parseHeader(headers);
     };
 
     /**

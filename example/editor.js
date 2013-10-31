@@ -63,7 +63,7 @@ require(["../webgettext"], function(webgettext){
                 pluralForms = webgettext.findPluralForms(data.headers["plural-forms"])
             }
             if(pluralForms){
-                data.headers["plural-forms"] = pluralForms.plurals;
+                data.headers["plural-forms"] = pluralForms.plural_forms;
             }
 
             $("#edit-tab").tab("show");

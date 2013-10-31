@@ -17,7 +17,7 @@
 
 // AMD shim
 /* jshint browser: true, nonstandard: true, strict: true */
-/* global define: false, poparser: false, moparser: false, pocompiler: false, mocompiler: false, plurals: false */
+/* global define: false, poparser: false, moparser: false, pocompiler: false, mocompiler: false, plural_forms: false */
 (function(root, factory) {
 
     "use strict";
@@ -28,13 +28,13 @@
             "./moparser",
             "./pocompiler",
             "./mocompiler",
-            "./plurals"
+            "./plural_forms"
             ], factory);
     } else {
-        root.poparser = factory(poparser, moparser, pocompiler, mocompiler, plurals);
+        root.poparser = factory(poparser, moparser, pocompiler, mocompiler, plural_forms);
     }
 
-}(this, function(poparser, moparser, pocompiler, mocompiler, plurals) {
+}(this, function(poparser, moparser, pocompiler, mocompiler, plural_forms) {
 
     "use strict";
 
@@ -66,18 +66,18 @@
                 lang = this.parseLanguageCode(lang);
             }
 
-            return plurals[lang.languageCode || "en"] || plurals["en"];
+            return plural_forms[lang.languageCode || "en"] || plural_forms["en"];
         },
 
         findPluralForms: function(pluralRule){
             var canonical = (pluralRule || "").toLowerCase().replace(/[\s();]/g, ""),
-                keys = Object.keys(plurals);
+                keys = Object.keys(plural_forms);
 
             for(var i = keys.length - 1; i>=0; i--){
-                if((plurals[keys[i]].plurals || "").toLowerCase().replace(/[\s();]/g, "") == canonical){
+                if((plural_forms[keys[i]].plural_forms || "").toLowerCase().replace(/[\s();]/g, "") == canonical){
                     return {
-                        numbers: plurals[keys[i]].numbers,
-                        plurals: plurals[keys[i]].plurals
+                        numbers: plural_forms[keys[i]].numbers,
+                        plural_forms: plural_forms[keys[i]].plural_forms
                     }
                 }
             }

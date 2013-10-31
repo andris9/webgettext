@@ -17,20 +17,20 @@
 
 // AMD shim
 /* jshint browser: true, nonstandard: true, strict: true */
-/* global define: false, sharedfuncs: false, TextDecoder: false */
+/* global define: false, webgettext_shared: false, TextDecoder: false */
 (function(root, factory) {
 
     "use strict";
 
     if (typeof define === 'function' && define.amd) {
         define([
-            "./sharedfuncs"
+            "./webgettext_shared"
             ], factory);
     } else {
-        root.poparser = factory(sharedfuncs);
+        root.poparser = factory(webgettext_shared);
     }
 
-}(this, function(sharedfuncs) {
+}(this, function(webgettext_shared) {
 
     "use strict";
 
@@ -70,7 +70,7 @@
         }
 
         if((match = headers.match(/[; ]charset\s*=\s*([\w\-]+)(?:[\s;]|\\n)*"\s*$/mi))){
-            this._charset = sharedfuncs.formatCharset(match[1], this._charset);
+            this._charset = webgettext_shared.formatCharset(match[1], this._charset);
         }
 
         if(this._charset == "iso-8859-1"){
@@ -368,7 +368,7 @@
             }
 
             if(!table.headers && !msgctxt && !lex[i].msgid){
-                table.headers = sharedfuncs.parseHeader(lex[i].msgstr[0]);
+                table.headers = webgettext_shared.parseHeader(lex[i].msgstr[0]);
             }
 
             table.translations[msgctxt][lex[i].msgid] = lex[i];

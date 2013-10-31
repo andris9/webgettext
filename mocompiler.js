@@ -17,20 +17,20 @@
 
 // AMD shim
 /* jshint browser: true, nonstandard: true, strict: true */
-/* global define: false, sharedfuncs: false, TextEncoder: false */
+/* global define: false, webgettext_shared: false, TextEncoder: false */
 (function(root, factory) {
 
     "use strict";
 
     if (typeof define === 'function' && define.amd) {
         define([
-            "./sharedfuncs"
+            "./webgettext_shared"
             ], factory);
     } else {
-        root.moparser = factory(sharedfuncs);
+        root.moparser = factory(webgettext_shared);
     }
 
-}(this, function(sharedfuncs) {
+}(this, function(webgettext_shared) {
 
     "use strict";
 
@@ -69,7 +69,7 @@
     Compiler.prototype._handleCharset = function(){
         var parts = (this._table.headers['content-type'] || "text/plain").split(";"),
             contentType = parts.shift(),
-            charset = sharedfuncs.formatCharset(this._charset),
+            charset = webgettext_shared.formatCharset(this._charset),
             params = [];
 
         params = parts.map(function(part){
@@ -79,7 +79,7 @@
 
             if(key.toLowerCase() == "charset"){
                 if(!charset){
-                    charset = sharedfuncs.formatCharset(value.trim() || "utf-8");   
+                    charset = webgettext_shared.formatCharset(value.trim() || "utf-8");   
                 }
                 return "charset=" + charset;
             }
@@ -109,7 +109,7 @@
 
         list.push({
             msgid: new ArrayBuffer(0),
-            msgstr: new TextEncoder(this._charset).encode(sharedfuncs.generateHeader(this._table.headers)).buffer
+            msgstr: new TextEncoder(this._charset).encode(webgettext_shared.generateHeader(this._table.headers)).buffer
         });
 
         Object.keys(this._table.translations).forEach((function(msgctxt){
@@ -217,7 +217,7 @@
         // build originals table
         curPosition = 28 + 2 * (4 + 4) * list.length;
         for(i=0, len = list.length; i < len; i++){
-            sharedfuncs.bufferCopy(list[i].msgid, returnBuffer, curPosition);
+            webgettext_shared.bufferCopy(list[i].msgid, returnBuffer, curPosition);
             returnBuffer.setUint32(28 + i * 8, list[i].msgid.byteLength, this._littleEndian);
             returnBuffer.setUint32(28 + i * 8 + 4, curPosition, this._littleEndian);
             returnBuffer[curPosition + list[i].msgid.byteLength] = 0x00;
@@ -226,7 +226,7 @@
             
         // build translations table
         for(i=0, len = list.length; i<len; i++){
-            sharedfuncs.bufferCopy(list[i].msgstr, returnBuffer, curPosition);
+            webgettext_shared.bufferCopy(list[i].msgstr, returnBuffer, curPosition);
             returnBuffer.setUint32(28 + (4 + 4) * list.length + i * 8, list[i].msgstr.byteLength, this._littleEndian);
             returnBuffer.setUint32(28 + (4+4) * list.length + i * 8 + 4, curPosition, this._littleEndian);
             returnBuffer[curPosition + list[i].msgstr.byteLength] = 0x00;

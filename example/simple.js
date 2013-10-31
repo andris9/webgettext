@@ -1,4 +1,4 @@
-require(["../sharedfuncs", "../poparser", "../pocompiler", "../moparser", "../mocompiler"], function(sharedfuncs, poparser, pocompiler, moparser, mocompiler) {
+require(["../webgettext_shared", "../poparser", "../pocompiler", "../moparser", "../mocompiler"], function(webgettext_shared, poparser, pocompiler, moparser, mocompiler) {
 
     window.parsePO = function(){
         var fileElm = document.getElementById("source");
